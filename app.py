@@ -3,11 +3,9 @@ Python OCR app sample.
 """
 
 from datetime import datetime
-#import easyocr
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
 app = Flask(__name__)
-#reader = easyocr.Reader(["en", "cs"])
 
 @app.route("/")
 def index():
@@ -22,6 +20,13 @@ def easyocr_sample(enable_dowload: bool):
     )
     """
     return f"Enabled download: {enable_dowload}"
+
+@app.route("/processing", methods = ["POST"])
+def file_upload():
+    if request.method == "POST":
+        files = request.files["file"]
+        return ("Files were added to processing queue.", 200)
+    return ("Wrong request.", 400)
 
 if __name__ == "__main__":
     app.run()
