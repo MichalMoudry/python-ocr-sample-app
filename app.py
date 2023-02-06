@@ -9,17 +9,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return f"Index page | Current date: {datetime.now()}"
-
-@app.route("/ocr/<enable_dowload>")
-def easyocr_sample(enable_dowload: bool):
-    """
-    result = (
-        reader.readtext("./test_images/img01.png"),
-        reader.readtext("./test_images/img02.png")
-    )
-    """
-    return f"Enabled download: {enable_dowload}"
+    #return f"Index page | Current date: {datetime.now()}"
+    return render_template("index.html")
 
 @app.route("/processing", methods = ["POST"])
 def file_upload():

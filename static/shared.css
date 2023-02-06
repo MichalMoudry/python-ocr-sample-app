@@ -1,0 +1,29 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 4rem;
+    padding: 1rem;
+    background: lightblue;
+    padding-bottom: 2rem;
+}
+
+.card {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius: 0.5rem;
+}
+
+input {
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 200,
+  'opsz' 48
+}
