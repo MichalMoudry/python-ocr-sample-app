@@ -13,9 +13,10 @@ def index():
     return render_template("index.html")
 
 @app.route("/processing", methods = ["POST"])
-def file_upload():
+def processing():
     if request.method == "POST":
         files = request.files["file"]
+        print(f"-- {files.filename}")
         return ("Files were added to processing queue.", 200)
     return ("Wrong request.", 400)
 
